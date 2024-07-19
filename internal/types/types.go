@@ -1,6 +1,8 @@
 package types
 
-import "time"
+import (
+	"time"
+)
 
 type Event struct {
 	SuppliedBy       string    `json:"suppliedBy" bigquery:"suppliedBy"`
@@ -23,4 +25,10 @@ type Info struct {
 	SuppliedFor string    `json:"suppliedFor"`
 	Time        time.Time `json:"time"`
 	Text        string    `json:"text"`
+}
+
+type TimelineEntry struct {
+	Title   string
+	Content string
+	Date    time.Time
 }

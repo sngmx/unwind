@@ -1,44 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timeline</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/main.css">
-</head>
-<body class="bg-gray-900 text-white h-screen flex items-center justify-center">
-    <div class="container flex bg-gray-800 shadow-lg rounded-lg overflow-hidden max-w-screen-md mx-auto">
-        <!-- Sidebar -->
-        <div class="sidebar bg-gray-700 text-white p-4 w-64">
-            <h2 class="text-lg font-bold">Routes</h2>
-            <ul class="mt-4">
-                <li><a href="/" class="block py-2 hover:bg-gray-600 rounded">Home</a></li>
-                <li><a href="/upload" class="block py-2 hover:bg-gray-600 rounded">Upload</a></li>
-                <li><a href="/timeline" class="block py-2 hover:bg-gray-600 rounded">Timeline</a></li>
-            </ul>
+{{define "timeline"}}
+<div class="timeline" id="timeline">
+    {{range .Entries}}
+    <div class="mb-6">
+        <h3 class="text-2xl font-semibold mb-4">{{index . "Time"}}</h3>
+        <div class="card bg-gray-700 p-4 rounded-lg mb-4">
+            <h2 class="text-xl font-bold">{{index . "EventName"}}</h2>
+            <p>{{index . "Vibe"}}</p>
         </div>
-        <!-- Content -->
-        <div class="content p-4 flex-1">
-            <h1 class="text-4xl font-bold mb-8">On this day</h1>
-            <div class="timeline">
-                <div class="mb-6">
-                    <h3 class="text-2xl font-semibold mb-4">1 year ago</h3>
-                    <div class="card bg-gray-700 p-4 rounded-lg mb-4 opacity-100">
-                        <h2 class="text-xl font-bold">Title 1</h2>
-                        <p>Body content goes here. This is an example of a timeline card.</p>
-                    </div>
-                </div>
-                <div class="mb-6">
-                    <h3 class="text-2xl font-semibold mb-4">2 years ago</h3>
-                    <div class="card bg-gray-700 p-4 rounded-lg mb-4 opacity-75">
-                        <h2 class="text-xl font-bold">Title 2</h2>
-                        <p>Another body content for the second card. Each card represents a point in the timeline.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Loop through all columns for this entry -->
+        <ul>
+            {{range $key, $value := .}}
+            {{if not (or (eq $key "Time") (eq $key "EventName") (eq $key "Vibe") (eq $key "EventType") (eq $key "SuppliedBy") (eq $key "SuppliedFor"))}} <!-- Exclude specific columns -->
+            <li><strong>{{ $key }}:</strong> {{ formatValue $value }}</li>
+            {{end}}
+            {{end}}
+        </ul>
     </div>
-</body>
-</html>
+    {{end}}
+</div>
+{{end}}
