@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+    color-scheme: light dark;
+    background-color: #1a202c;
+    color: #e2e8f0;
+    /* Default text color in dark mode */
+}
+
+.container {
+    max-width: 800px; /* Adjust this value as needed */
+    height: 80vh; /* Adjust the height to control the vertical space */
+}

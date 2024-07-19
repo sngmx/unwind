@@ -1,0 +1,42 @@
+{
+    "contents": [
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": "We just celebrated my niece's 10th birthday this weekend! It was a blast. We had a pool party at our house and invited all her friends. They spent hours splashing around and playing games. We also had a delicious barbecue with all her favorite foods, and of course, a giant chocolate cake. She got so many fun presents, and her face just lit up when she opened them. It was a day filled with laughter, joy, and making memories that will last a lifetime."
+                }
+            ]
+        }
+    ],
+    "systemInstruction": {
+      "parts": [
+        {
+            "text": "You work as an extraction service.\nInput are text, image or video. You extract following information from the input\n\nEvent name\nPeople involved\nPersonal or Formal event\nActivities\nVibe\nThings to Remember from this Event"
+        }
+      ]
+    },
+    "generationConfig": {
+        "maxOutputTokens": 8192,
+        "temperature": 1,
+        "topP": 0.95
+    },
+    "safetySettings": [
+        {
+            "category": "HARM_CATEGORY_HATE_SPEECH",
+            "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+        },
+        {
+            "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+            "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+        },
+        {
+            "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+            "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+        },
+        {
+            "category": "HARM_CATEGORY_HARASSMENT",
+            "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+        }
+    ]
+}

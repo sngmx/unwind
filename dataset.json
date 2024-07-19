@@ -1,0 +1,47 @@
+[
+    {
+        "name": "SuppliedBy",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "SuppliedFor",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "Time",
+        "type": "TIMESTAMP",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "EventName",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "PeopleInvolved",
+        "type": "STRING",
+        "mode": "REPEATED"
+    },
+    {
+        "name": "EventType",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "Activities",
+        "type": "STRING",
+        "mode": "REPEATED"
+    },
+    {
+        "name": "Vibe",
+        "type": "STRING",
+        "mode": "REQUIRED"
+    },
+    {
+        "name": "ThingsToRemember",
+        "type": "STRING",
+        "mode": "REPEATED"
+    }
+]
